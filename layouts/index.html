@@ -1,0 +1,79 @@
+{{- define "main" }}
+
+{{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{- $pages = where $pages "Params.hiddenInHomeList" "!=" true }}
+{{- $paginator := .Paginate $pages }}
+{{- $profile := site.Params.profileMode }}
+
+<section class="home-hero">
+  <div class="home-hero-avatar" aria-hidden="true">
+    {{- with $profile.avatarInitials }}
+      <span>{{ . }}</span>
+    {{- else }}
+      <span>OU</span>
+    {{- end }}
+  </div>
+  <div class="home-hero-copy">
+    <h1>{{ $profile.title | default site.Title }}</h1>
+    {{- with $profile.subtitle }}
+      <p>{{ . }}</p>
+    {{- end }}
+  </div>
+  <div class="home-hero-social">
+    {{- partial "social_icons.html" (dict "align" "center") -}}
+  </div>
+</section>
+
+{{- if gt (len $paginator.Pages) 0 }}
+<section class="recent-section">
+  <header class="recent-header">
+    <h2>{{ site.Params.homeRecentTitle | default "Recent" }}</h2>
+  </header>
+
+  <div class="recent-list">
+    {{- range $paginator.Pages }}
+      {{- $page := . }}
+      {{- $cover := "" }}
+      {{- with $page.Params.cover.image }}
+        {{- $cover = ($page.Resources.ByType "image").GetMatch (printf "*%s*" .) }}
+      {{- end }}
+      <article class="recent-entry">
+        {{- if $cover }}
+          <div class="recent-thumb">
+            <img src="{{ $cover.RelPermalink }}" alt="{{ $page.Params.cover.alt | default $page.Title }}" loading="lazy">
+          </div>
+        {{- end }}
+        <div class="recent-body">
+          <header class="recent-entry-header">
+            <h3>{{ $page.Title }}</h3>
+          </header>
+          {{- if (ne ($page.Param "hideSummary") true) }}
+            <div class="recent-entry-summary">
+              <p>{{ $page.Summary | plainify | htmlUnescape }}{{ if $page.Truncated }}...{{ end }}</p>
+            </div>
+          {{- end }}
+          <footer class="recent-entry-footer">
+            {{- partial "post_meta.html" $page -}}
+          </footer>
+        </div>
+        <a class="entry-link" aria-label="post link to {{ $page.Title | plainify }}" href="{{ $page.Permalink }}"></a>
+      </article>
+    {{- end }}
+  </div>
+</section>
+{{- end }}
+
+{{- if gt $paginator.TotalPages 1 }}
+<footer class="page-footer">
+  <nav class="pagination">
+    {{- if $paginator.HasPrev }}
+    <a class="prev" href="{{ $paginator.Prev.URL | absURL }}">«&nbsp;{{ i18n "prev_page" }}</a>
+    {{- end }}
+    {{- if $paginator.HasNext }}
+    <a class="next" href="{{ $paginator.Next.URL | absURL }}">{{ i18n "next_page" }}&nbsp;»</a>
+    {{- end }}
+  </nav>
+</footer>
+{{- end }}
+
+{{- end }}

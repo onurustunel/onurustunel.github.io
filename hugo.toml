@@ -3,18 +3,13 @@ languageCode = "en-us"
 title = "Onur Ustunel"
 theme = "PaperMod"
 enableRobotsTXT = true
-enableGitInfo = true
-summaryLength = 28
+summaryLength = 24
 
 [pagination]
-pagerSize = 6
+pagerSize = 4
 
 [outputs]
 home = ["HTML", "RSS", "JSON"]
-
-[taxonomies]
-category = "categories"
-tag = "tags"
 
 [markup.goldmark.renderer]
 unsafe = true
@@ -25,43 +20,33 @@ guessSyntax = true
 lineNos = false
 style = "github"
 
-[markup.tableOfContents]
-startLevel = 2
-endLevel = 3
-ordered = false
-
 [params]
 env = "production"
 author = "Onur Ustunel"
-description = "Swift, SwiftUI, architecture, and performance notes from building real iOS products."
-keywords = ["Swift", "SwiftUI", "iOS", "Architecture", "Performance", "Mobile Development"]
-defaultTheme = "auto"
+description = "Senior iOS developer writing about SwiftUI, architecture, and performance."
+keywords = ["Swift", "SwiftUI", "iOS", "Architecture", "Performance"]
+defaultTheme = "light"
+disableThemeToggle = true
 ShowReadingTime = true
-ShowWordCount = true
-ShowShareButtons = true
+ShowWordCount = false
+ShowShareButtons = false
 ShowPostNavLinks = true
-ShowBreadCrumbs = true
+ShowBreadCrumbs = false
 ShowCodeCopyButtons = true
-ShowRssButtonInSectionTermList = true
-ShowToc = true
-ShowAllPagesInArchive = true
+ShowRssButtonInSectionTermList = false
+ShowToc = false
 mainSections = ["posts"]
-DateFormat = "January 2, 2006"
+DateFormat = "2 January 2006"
+homeRecentTitle = "Recent"
 
-[params.homeInfoParams]
-Title = "Onur Ustunel"
-Content = "Writing about SwiftUI, app architecture, and performance decisions that matter in production."
-
-[params.editPost]
-URL = "https://github.com/onurustunel/onurustunel.github.io/tree/main/content"
-Text = "Edit on GitHub"
-appendFilePath = true
+[params.profileMode]
+title = "Onur Ustunel"
+subtitle = "Senior iOS Developer"
+avatarInitials = "OU"
 
 [params.assets]
-disableFingerprinting = false
-disableHLJS = true
-theme_color = "#f7f4ec"
-msapplication_TileColor = "#f7f4ec"
+theme_color = "#f3f3f1"
+msapplication_TileColor = "#f3f3f1"
 
 [params.fuseOpts]
 isCaseSensitive = false
@@ -76,20 +61,16 @@ keys = ["title", "summary", "content"]
 name = "github"
 url = "https://github.com/onurustunel"
 
-[[params.socialIcons]]
-name = "rss"
-url = "/index.xml"
-
 [[menu.main]]
-identifier = "posts"
-name = "Posts"
+identifier = "blog"
+name = "Blog"
 url = "/posts/"
 weight = 10
 
 [[menu.main]]
-identifier = "archive"
-name = "Archive"
-url = "/archive/"
+identifier = "about"
+name = "About Me"
+url = "/about/"
 weight = 20
 
 [[menu.main]]
@@ -97,9 +78,3 @@ identifier = "search"
 name = "Search"
 url = "/search/"
 weight = 30
-
-[[menu.main]]
-identifier = "github"
-name = "GitHub"
-url = "https://github.com/onurustunel"
-weight = 40
