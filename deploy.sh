@@ -26,6 +26,7 @@ rsync -a --delete \
   --exclude 'content/' \
   --exclude 'deploy.sh' \
   --exclude 'hugo.toml' \
+  --exclude 'layouts/' \
   --exclude 'public/' \
   --exclude 'resources/' \
   --exclude 'themes/' \
