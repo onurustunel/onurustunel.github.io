@@ -49,14 +49,36 @@
   #menu .menu-theme-toggle {
     display: inline-flex;
     align-items: center;
-    margin-inline-start: 8px;
+    margin-inline-start: 2px;
   }
 
   #menu .menu-theme-toggle button#theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
     margin: 0;
     padding: 0;
-    font-size: 22px;
+    color: var(--primary);
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-radius: 999px;
     line-height: 1;
+  }
+
+  #menu .menu-theme-toggle button#theme-toggle:hover {
+    background: var(--code-bg);
+  }
+
+  #menu .menu-theme-toggle button#theme-toggle svg {
+    display: block;
+  }
+
+  #menu .menu-theme-toggle button#theme-toggle #moon,
+  #menu .menu-theme-toggle button#theme-toggle #sun {
+    width: 18px;
+    height: 18px;
   }
 
   .main .home-hero {
@@ -252,19 +274,6 @@
   #searchResults .focus {
     transform: scale(0.98);
     border: 2px solid var(--tertiary);
-  }
-
-  #menu .menu-theme-toggle {
-    display: inline-flex;
-    align-items: center;
-    margin-inline-start: 8px;
-  }
-
-  #menu .menu-theme-toggle button#theme-toggle {
-    margin: 0;
-    padding: 0;
-    font-size: 22px;
-    line-height: 1;
   }
 
   @media (max-width: 720px) {
