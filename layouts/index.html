@@ -6,13 +6,6 @@
 {{- $profile := site.Params.profileMode }}
 
 <section class="home-hero">
-  <div class="home-hero-avatar" aria-hidden="true">
-    {{- with $profile.avatarInitials }}
-      <span>{{ . }}</span>
-    {{- else }}
-      <span>OU</span>
-    {{- end }}
-  </div>
   <div class="home-hero-copy">
     <h1>{{ $profile.title | default site.Title }}</h1>
     {{- with $profile.subtitle }}
