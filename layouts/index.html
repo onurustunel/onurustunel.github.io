@@ -19,9 +19,11 @@
       <p>{{ . }}</p>
     {{- end }}
   </div>
-  <div class="home-hero-social">
-    {{- partial "social_icons.html" (dict "align" "center") -}}
-  </div>
+  {{- with site.Params.socialIcons }}
+    <div class="home-hero-social">
+      {{- partial "social_icons.html" (dict "align" "center") -}}
+    </div>
+  {{- end }}
 </section>
 
 {{- if gt (len $paginator.Pages) 0 }}

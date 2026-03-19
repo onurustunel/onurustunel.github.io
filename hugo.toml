@@ -23,10 +23,10 @@ style = "github"
 [params]
 env = "production"
 author = "Onur Ustunel"
-description = "Senior iOS developer writing about SwiftUI, architecture, and performance."
+description = "Writing about the engineering thinking behind products, product ideas, systems, and software tradeoffs."
 keywords = ["Swift", "SwiftUI", "iOS", "Architecture", "Performance"]
 defaultTheme = "light"
-disableThemeToggle = true
+disableThemeToggle = false
 ShowReadingTime = true
 ShowWordCount = false
 ShowShareButtons = false
@@ -41,7 +41,7 @@ homeRecentTitle = "Recent"
 
 [params.profileMode]
 title = "Onur Ustunel"
-subtitle = "Senior iOS Developer"
+subtitle = "Engineering Thinking Behind Products"
 avatarInitials = "OU"
 
 [params.assets]
@@ -56,10 +56,6 @@ distance = 1000
 threshold = 0.3
 minMatchCharLength = 2
 keys = ["title", "summary", "content"]
-
-[[params.socialIcons]]
-name = "github"
-url = "https://github.com/onurustunel"
 
 [[menu.main]]
 identifier = "blog"
